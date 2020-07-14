@@ -1,6 +1,8 @@
+// Moment.js
 var currentDate = moment().format('dddd') + " " + moment().format("Do MMM YYYY");
 var currentHour = moment().format('h:mm:ss a');
 
+// Timeblocks
 var nineAm = $("#9am");
 var tenAm = $("#10am");
 var elevenAm = $("#11am");
@@ -15,6 +17,7 @@ var hour = moment().hours();
 var userInput;
 var hourSpan;
 
+// Date and hour
 var interval = setInterval(function() {
   var momentNow = moment();
   $('#currentDay').html(momentNow.format('YYYY MMMM DD') + ' '
@@ -24,7 +27,7 @@ var interval = setInterval(function() {
 }, 100);
 
 function initPage() {
-
+    // Stores events
     var init9 = JSON.parse(localStorage.getItem("09:00 am"));
     nineAm.val(init9);
   
@@ -54,7 +57,7 @@ function initPage() {
   } 
 
   function background () {
-      
+    // Displays past, current, future events  
     $(".form-control").each(function () {
         var timeTest = parseInt($(this).attr("id"));
         hour = parseInt(hour);
@@ -72,6 +75,7 @@ function initPage() {
     initPage()
     background()
 
+  // Saves events
   $(".saveBtn").on("click", function(){
     userInput = $(this).siblings(".form-control").val().trim();
     console.log(userInput);
@@ -80,6 +84,7 @@ function initPage() {
     localStorage.setItem(hourSpan, JSON.stringify(userInput));
   })
 
+  // Clears inputs
   $("#clearDay").on("click", function(){
     localStorage.clear();
     initPage()
