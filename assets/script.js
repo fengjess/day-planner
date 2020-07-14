@@ -80,4 +80,9 @@ function initPage() {
     localStorage.setItem(hourSpan, JSON.stringify(userInput));
   })
 
+  $("#clearDay").on("click", function(){
+    localStorage.clear();
+    initPage()
+  }) 
+
 });
