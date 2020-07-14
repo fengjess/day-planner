@@ -9,7 +9,9 @@ A simple calendar application that allows the user to save events for each hour 
     - Color coded for past, present, and future events
     - Button to clear calendar for next day's use
 
-## Screenshots
+## GIF
+
+![Work Day Scheduler](https://user-images.githubusercontent.com/65512016/87385737-a9cd8f80-c553-11ea-8ad1-20306732b156.gif)
 
 ## URL
 
